@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Train Coupling Simulation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Coupling_Decoupling.css" />
+  </head>
+
+  <body>
+    <h1>Dynamic Train Coupling and Decoupling Simulation</h1>
+    <div id="description">
+      <h2>About the Project</h2>
+      <p>
+        This simulation demonstrates the concept of dynamic train coupling and
+        decoupling, where two trains adjust their speeds and distances to either
+        link together or operate independently. Coupling allows trains to
+        operate more efficiently by moving as a single unit, while decoupling
+        provides flexibility and improved utilization of railway infrastructure.
+      </p>
+    </div>
+    <canvas id="simulationCanvas" width="800" height="400"></canvas>
+    <div>
+      <button onclick="coupleTrains()">Couple</button>
+      <button onclick="decoupleTrains()">Decouple</button>
+      <div id="speedDisplay">Speeds: Train 1 = 0, Train 2 = 0</div>
+    </div>
+    <div id="footer">Made by Arnob G</div>
+
+    <script src="./Coupling_Decoupling.js"></script>
+  </body>
+</html>
