@@ -64,6 +64,7 @@ function updateSimulation() {
 function coupleTrains() {
   coupled = true;
 }
+
 function decoupleTrains() {
   coupled = false;
 }
@@ -90,6 +91,15 @@ function adjustSpeedsTowardsInitial() {
 function separateTrains() {
   if (train1Position > 300) train1Position -= train1Speed;
   if (train2Position < 500) train2Position += train2Speed;
+}
+
+function toggleResources() {
+  var resourcesPanel = document.getElementById('resourcesPanel');
+  if (resourcesPanel.style.display === 'block') {
+    resourcesPanel.style.display = 'none';
+  } else {
+    resourcesPanel.style.display = 'block';
+  }
 }
 
 updateSimulation();

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif; /* Using Google's Roboto */
+  font-family: 'Roboto', sans-serif;
   background-color: #734ae8;
   background-image: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
   color: #ffffff;
@@ -11,16 +11,23 @@ body {
   justify-content: center;
   min-height: 100vh;
   box-shadow: inset 0 0 80px rgba(192, 219, 255, 0.35),
-    inset 0 0 32px rgba(65, 120, 255, 0.24); /* Glowing effect */
+    inset 0 0 32px rgba(65, 120, 255, 0.24);
 }
+
 h1,
 h2 {
-  color: #000000; /* Green color for headings */
+  color: #000000;
 }
+
 canvas {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
   border: 3px solid #333;
-  margin-top: 20px;
 }
+
 button {
   background-image: linear-gradient(
     to right,
@@ -37,15 +44,57 @@ button {
   transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 4px #004d40;
 }
+#resourcesToggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #00695c;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+#resourcesPanel {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background-color: #009688;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  display: none; /* Hidden by default */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Just below the toggle for layering */
+}
+
+#resourcesPanel ul {
+  list-style: none;
+  padding: 0;
+}
+
+#resourcesPanel ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
 button:hover {
   background: linear-gradient(145deg, #00695c, #009688);
 }
+
 button:active {
   box-shadow: 0 2px #004d40;
   transform: translateY(2px);
 }
+
 #description,
 #footer {
+  width: 100%;
   max-width: 800px;
   text-align: center;
   padding: 20px;
@@ -54,12 +103,61 @@ button:active {
   margin: 20px;
   line-height: 1.6;
   font-size: 16px;
+  box-sizing: border-box;
 }
+
+#description {
+  background: #333;
+}
+
 #speedDisplay {
   font-size: 18px;
   margin-top: 5px;
 }
+
 #footer {
-  font-size: 24px; /* Large font size for the footer */
-  margin-top: auto; /* Push the footer to the bottom of the view */
+  font-size: 18px;
+  margin-top: auto;
+  padding: 10px 0;
+  color: #ffffff;
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: 18px;
+  }
+  #description,
+  #footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  h1,
+  h2 {
+    font-size: 16px;
+  }
+  #description,
+  #footer {
+    padding: 5px;
+    font-size: 12px;
+  }
+  button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  #speedDisplay {
+    font-size: 16px;
+  }
 }
